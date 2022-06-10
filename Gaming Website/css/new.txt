@@ -1,0 +1,14 @@
+.ptr {
+    border: 3px solid #f1a409;
+    /* text-align: center; */
+    border-radius: 45px;
+    width: auto;
+    margin: 1% 1%;
+    margin-top: 2%;
+    /* margin-bottom: 2%; */
+    /* padding: 10px 420px; */
+    background-color: rgb(12, 17, 17);
+    background-position: center;
+    box-shadow: 5px 10px rgb(209 198 198);
+    float: none;
+}
