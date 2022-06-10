@@ -22,9 +22,14 @@ Tools/Technologies used in this Project
 and even more ........
 
 Screencshots of the website
-<img width="860" alt="image" src="https://user-images.githubusercontent.com/85798085/173012880-96e30267-c48a-434f-849c-12c801bd3183.png">
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/85798085/173012969-64c77077-27ed-428a-956a-f312ef87026c.png">
+
+<img width="560" alt="image" src="https://user-images.githubusercontent.com/85798085/173012880-96e30267-c48a-434f-849c-12c801bd3183.png">
+
+<img width="560" alt="image" src="https://user-images.githubusercontent.com/85798085/173012969-64c77077-27ed-428a-956a-f312ef87026c.png">
+
 <img width="411" alt="image" src="https://user-images.githubusercontent.com/85798085/173013397-487bc006-de4e-4e87-8f26-cb4ab17f2510.png">
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/85798085/173013743-37a9b761-66d9-4d6d-ac7c-df3f5e3800ac.png">
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/85798085/173016014-210dcb11-093d-4ca7-ae67-5157904f3511.png">
+
+<img width="560" alt="image" src="https://user-images.githubusercontent.com/85798085/173013743-37a9b761-66d9-4d6d-ac7c-df3f5e3800ac.png">
+
+<img width="560" alt="image" src="https://user-images.githubusercontent.com/85798085/173016014-210dcb11-093d-4ca7-ae67-5157904f3511.png">
 
