@@ -15,8 +15,8 @@ $mail->Port = 587; // TLS only
 $mail->SMTPSecure = 'tls'; // ssl is deprecated
 $mail->SMTPAuth = true;
 $mail->Username = 'gamingninja.3399@gmail.com'; // email
-$mail->Password = "A3v%\/UFk2k}f^04"; // password
-$mail->setFrom('gamingninja.3399@gmail.com', 'Gaming Ninja CHS. LTD.'); // From email and name
+$mail->Password = ""; // password
+$mail->setFrom('gamingninja.3399@gmail.com', 'Gaming Ninja PVT. LTD.'); // From email and name
 
 $mail->addAddress("anandjaiswar2002@gmail.com", "Anand"); // to email and name
 $mail->Subject = 'Forgot Password Code';
