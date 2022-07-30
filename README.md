@@ -2,7 +2,7 @@
 
 I aim to make a complete website that should have all the essential parts a website should have.
 
-[https://gamingninja-3399.000webhostapp.com/Gaming%20Website/index.php](https://gamingninja-3399.000webhostapp.com/Gaming%20Website/index.php)
+[https://gamingninja-3399.000webhostapp.com](https://gamingninja-3399.000webhostapp.com/)
 
 Features
 
