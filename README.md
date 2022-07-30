@@ -13,6 +13,8 @@ Features
 5. Sign in with Google button enabled. Users can sign in with google. [Check the button on [Log In Page](https://gamingninja-3399.000webhostapp.com/login.php) or [Registation Page](https://gamingninja-3399.000webhostapp.com/regis.php)]
 6. [Admin](https://gamingninja-3399.000webhostapp.com/Gaming%20Website/SuperUser.php) console which can see the no. of users Registerd and rated to the website. This Admin console only the admin can see.
 7. No Advertisements Except the [Action And Arcade](https://gamingninja-3399.000webhostapp.com/Gaming%20Website/Action%20And%20Arcade.php) Page[embeded KBH Games Website].
+8. The passwords that you enter are encrypted[2 & 3] using password_hash() with PASSWORD_BCRYPT. It uses the CRYPT_BLOWFISH algorithm to create the hash. This will produce a standard crypt() compatible hash using the "$2y$" identifier. The result will always be a 60 character string, or false on failure.
+
 
 released on 10-6-2022
 
