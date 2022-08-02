@@ -36,7 +36,7 @@ if (!isset(($_SESSION['count']))) {
 
     include 'dbcon.php';
     if (isset($_POST['submit'])) {
-
+ 
         $email                  =         $_SESSION['email_for_forget'];
         $Confidential_Code      =  strval($_SESSION['Confidential_Code']);
 
