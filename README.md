@@ -5,7 +5,7 @@ I aim to make a complete website that should have all the essential parts a webs
 [https://anandjaiswar.000webhostapp.com/Projects/GamingNinja/](https://anandjaiswar.000webhostapp.com/Projects/GamingNinja//)
 
 Features
-
+ 
 1. Easy and effective UI for users
 2. [Register](https://anandjaiswar.000webhostapp.com/Projects/GamingNinja/regis.php) with Email (Password Encrypted)
 3. [Sign in ](https://anandjaiswar.000webhostapp.com/Projects/GamingNinja/login.php)with Email (Password Encrypted)
