@@ -84,9 +84,9 @@ if (!in_array($providerName, ['Google', 'Microsoft', 'Yahoo'])) {
 //$redirectUri = 'http://localhost/PHPMailer/redirect';
 
 
-$redirectUri = ' ';
-$clientId = ' ';
-$clientSecret = ' ';
+$redirectUri = 'https://anandjaiswar.000webhostapp.com/Projects/GamingNinja/mail/get_oauth_token.php';
+$clientId = '588905532108-pr6bu169457hunncaqd50i8js50pn9ab.apps.googleusercontent.com';
+$clientSecret = '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';
 
 
 $params = [

@@ -1,5 +1,5 @@
 <?php
- 
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 // use PHPMailer\PHPMailer\PHPMailer;
@@ -120,12 +120,12 @@ session_start();
             //Either the gmail account owner, or the user that gave consent
 
             $email = 'gamingninja.3399@gmail.com';
-            $clientId = '588905532108-pr6bu169457hunncaqd50i8js50pn9ab.apps.googleusercontent.com';
-            $clientSecret = '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';
+            $clientId = ' ';
+            $clientSecret = ' ';
 
             //Obtained by configuring and running get_oauth_token.php
             //after setting up an app in Google Developer Console.
-            $refreshToken = '1//01RKdfKjNtsj3CgYIARAAGAESNwF-L9Ira4PUwt9NZHoDf-s4bX9EqAGy_Muq5SeImWF40FUqnCoq26DyFBoAcheOGptkXW_A9zU';
+            $refreshToken = ' ';
 
             $provider = new Google(
                 [
