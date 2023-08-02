@@ -1,6 +1,6 @@
 # Gaming-Ninja
 
-I aim to make a complete website that should have all the essential parts a website should have.
+I aim to make a complete website that should have all the essential parts a website should have. 
 
 [https://anandjaiswar.000webhostapp.com/Projects/GamingNinja/](https://anandjaiswar.000webhostapp.com/Projects/GamingNinja)
 
