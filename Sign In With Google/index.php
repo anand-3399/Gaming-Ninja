@@ -78,13 +78,14 @@ else {
     $emailquery = " select * from users where email='$_SESSION[user_email_address]' ";
     $query = mysqli_query($con, $emailquery);
     $emailcount = mysqli_num_rows($query);
+    
     if ($emailcount > 0) {
-        echo "email already exists";
-
+        echo "We Welcome You!!!";
     } 
     
     
     else {
+        
         $insertquery = "insert into users(first_name, last_name, email, gender, locale,picture) values('$_SESSION[user_first_name]','$_SESSION[user_last_name]','$_SESSION[user_email_address]','$_SESSION[user_gender] ','$_SESSION[user_locale]','$_SESSION[user_image]')";
 
         $iquery = mysqli_query($con, $insertquery);
@@ -98,10 +99,9 @@ else {
 
     $email_pass = mysqli_fetch_assoc($query);
     $_SESSION['id'] = $email_pass['id'];
-    // header('location:../Gaming Website/index.php');
     ?>
     <script>
-        location.replace("../Gaming Website/index.php");
+        location.replace("../index.php");
     </script>
     <?php
 }

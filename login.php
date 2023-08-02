@@ -4,107 +4,330 @@ session_start();
 
 ?>
 
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zxx">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAMING NINJA</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
-    <link rel="icon" type="image/x-icon" href="https://cdn.dribbble.com/users/5178686/screenshots/11351328/shot-cropped-1589021225059.png?compress=1&resize=400x300">
-    <?php include 'styles.php' ?>
-    <?php include 'links.php' ?>
-
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>gaming</title>
+  <link rel="icon" href="img/Gaming Ninja Logo.png">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- animate CSS -->
+  <link rel="stylesheet" href="css/animate.css">
+  <!-- owl carousel CSS -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <!-- font awesome CSS -->
+  <link rel="stylesheet" href="css/all.css">
+  <!-- flaticon CSS -->
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/themify-icons.css">
+  <!-- font awesome CSS -->
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <!-- swiper CSS -->
+  <link rel="stylesheet" href="css/slick.css">
+  <!-- style CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 </head>
 
 <body>
 
-    <?php
+  <?php
 
-    include 'dbcon.php';
-    if (isset($_POST['submit'])) {
-        $email      =  mysqli_real_escape_string($con, $_POST['email']);
-        $password   =  mysqli_real_escape_string($con, $_POST['password']);
+  include 'dbcon.php';
+  if (isset($_POST['submit'])) {
+    $email      =  mysqli_real_escape_string($con, $_POST['email']);
+    $password   =  mysqli_real_escape_string($con, $_POST['password']);
 
-        $email_search = " select * from registration where email = '$email' ";
-        $query = mysqli_query($con, $email_search);
-        $emailcount = mysqli_num_rows($query);
+    $email_search = " select * from registration where email = '$email' ";
+    $query = mysqli_query($con, $email_search);
+    $emailcount = mysqli_num_rows($query);
 
-        if ($emailcount) {
+    if ($emailcount) {
 
-            $email_pass = mysqli_fetch_assoc($query);
+      $email_pass = mysqli_fetch_assoc($query);
 
-            $db_pass = $email_pass['password'];
+      $db_pass = $email_pass['password'];
 
-            $_SESSION['username'] = $email_pass['username'];
-            $_SESSION['id'] = $email_pass['id'];
-            $pass_decode = password_verify($password, $db_pass);
+      $_SESSION['username'] = $email_pass['username'];
+      $_SESSION['id'] = $email_pass['id'];
+      $pass_decode = password_verify($password, $db_pass);
 
-            if ($pass_decode) {
-                echo "Login Succesfull";
-                // header('location:home.php')
-    ?>
-                <script>
-                    location.replace("Gaming Website/index.php");
-                </script>
-            <?php
-            } else {
-                echo "Password Incorrect\nPlease check your password";
-            }
-        } else {
-            ?>
-            <script>
-                alert("Email was not registered. Please Register Yourself");
-            </script>
-    <?php
-        }
+      if ($pass_decode) {
+        echo "Login Succesfull";
+  ?>
+        <script>
+          location.replace("index.php");
+        </script>
+      <?php
+      } else {
+      ?>
+        <script>
+          alert("Password Incorrect\nPlease check your password");
+        </script>
+      <?php
+      }
+    } else {
+      ?>
+      <script>
+        alert("Email was not registered. Please Register Yourself");
+      </script>
+  <?php
     }
-    ?>
+  }
+  ?>
 
 
-    <div class="card bg-dark" style="color: white;">
-        <article class="card-body mx-auto" style="max-width: 400px;">
-            <h4 class="card-title mt-3 text-center">Create Account</h4>
-            <p class="text-center">Get started with your free account</p>
-            <p>
-                <a href="Sign In With Google\index.php" class="btn btn-block btn-gmail"> <i class="fa fa-google"></i> Login via Gmail</a> <a href="" class="btn btn-block btn-facebook"> <i class="fa fa-facebook-f"></i> Login via facebook</a>
-            </p>
-            <p class="divider-text">
-                <span class="bg-light">OR</span>
-            </p>
-            <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+
+
+
+
+  <div class="body_bg">
+
+
+    <!--::header part start::-->
+    <header class="main_menu single_page_menu">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand" href="index.php"> <img src="img\Gaming Ninja Logo.png" alt="logo">
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="menu_icon"><i class="fas fa-bars"></i></span>
+              </button>
+
+              <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.php">Home</a>
+                  </li>
+                  <!-- check wheter its previously login or not -->
+
+                  <?php
+                  if (!isset($_SESSION['username'])) {
+                  ?>
+                    <li class="nav-item">
+                      <a class="nav-link" href="login.php">Login</a>
+                    </li>
+                  <?php
+                  } else {
+                  ?>
+                    <li class="nav-item">
+                      <a id="LOGIN_ID_MAIN" onclick="CheckStatus()" class="nav-link" href="logout.php">Logout</a>
+                    </li>
+                  <?php
+                  }
+                  ?>
+
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="team.php">team</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Blog
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="blog.php"> blog</a>
+                      <a class="dropdown-item" href="single-blog.php">Latest blog</a>
                     </div>
-                    <input name="email" class="form-control" placeholder="Email address" type=" email" required>
-                </div>
-                <!--form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                    </div>
-                    <input class="form-control" placeholder="Create password" type="password" name="password" value="" required>
-                </div> <!-- form-group// -->
+                  </li>
 
-                <div class=" form-group">
-                    <button type="submit" name="submit" class="btn btn-primary btn-block" style="width: 100%;"> Login Now </button>
-                </div>
-                <!-- form-group//-->
-                <p class="text-center">Not have a account? <a href="regis.php">Create Account Now!!!</a> </p>
-                <p class="text-center">Forgot Passoword?? <a href="forgot3.php">CLick here to reset your password</a> </p>
-                <p class="text-center">Back To <a href="Gaming Website\index.php">Home Page</a> </p>
-            </form>
-        </article>
-        <div class="new">
-            This page was created by Anand Jaiswar for educational purpose only.
-            contact me at anandjaiswar02@gmail.com
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.php">Contact</a>
+                  </li>
+                </ul>
+              </div>
+              <a href="#" class="btn_1 d-none d-sm-block">Install Now</a>
+            </nav>
+          </div>
         </div>
-    </div> <!-- card.// -->
-    </div>
+      </div>
+    </header>
+    <!-- Header part end-->
+
+
+
+    <!-- ================ contact section start ================= -->
+    <section class="contact-section section_padding">
+      <div class="container">
+
+        <div class="row credientials pt-5">
+          <div class="col-lg-5">
+            <h2 class="contact-title">Login With your Credientials</h2>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="col-lg-12">
+              <form class="form-contact contact_form" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post" id="contactForm" novalidate="novalidate">
+                <div class="row credientials">
+                  <div class="col-lg-4 googleButton" onclick="location.replace('Sign In With Google/index.php')">
+                    <div class="google-btn form-group">
+                      <div class="google-icon-wrapper">
+                        <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                      </div>
+                      <p class="btn-text"><b>Sign in with Google</b></p>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 googleButton">
+                    <div class="google-btn form-group">
+                      <div class="google-icon-wrapper">
+                        <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1200px-Microsoft_logo.svg.png" />
+                      </div>
+                      <p class="btn-text"><b>Sign in with Microsoft</b></p>
+                    </div>
+
+                  </div>
+
+                  <div class="col-lg-8">
+                    <div class="form-group">
+                      <input required class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address'>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-8">
+                    <div class="form-group">
+                      <input required class="form-control" name="password" id="password" type="password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Password'" placeholder='Enter Password'>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-8">
+                    <button name="submit" type="submit" class="button-contactForm btn_1">Login </button>
+                  </div>
+                  <div class="col-lg-8 credientials">
+                    <h5>
+                      Not Having a account. No Problem <a href="signup.php"> Sign Up </a> Now
+                    </h5>
+                  </div>
+                  <div class="col-lg-8 credientials">
+                    <h5>
+                      Dont remember the Password? Click to <a href="forgot main.php"> Change Password </a>
+                    </h5>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ================ contact section end ================= -->
+
+    <!--::footer_part start::-->
+    <footer class="footer_part">
+      <div class="footer_top">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-lg-3">
+              <div class="single_footer_part">
+                <a href="index.php" class="footer_logo_iner"> <img src="img/Gaming Ninja Logo.png" alt="#"> </a>
+                <p>Connect with US
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="single_footer_part">
+                <h4>Contact Info</h4>
+                <p>Address : Mumbai, India</p>
+                <p>Phone : +91 9699685491</p>
+                <p>Email : anandjaiswar02@gmail.com</p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="single_footer_part">
+                <h4>Important Link</h4>
+                <ul class="list-unstyled">
+                  <li><a href="">WHMCS-bridge</a></li>
+                  <li><a href="">Search Domain</a></li>
+                  <li><a href="">My Account</a></li>
+                  <li><a href="">Shopping Cart</a></li>
+                  <li><a href="">Our Shop</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="single_footer_part">
+                <h4>Newsletter</h4>
+                <p>Know about the latest Game updates now.
+                </p>
+                <div id="mc_embed_signup">
+                  <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part">
+                    <input required type="email" name="email" id="newsletter-form-email" placeholder="Email Address" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
+                    <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm"><i class="far fa-paper-plane"></i></button>
+                    <div class="mt-10 info"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copygight_text">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <div class="copyright_text">
+                <P>
+                  Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script> All rights reserved by
+                  Gaming Ninja| Made with
+                  <i class="ti-heart" aria-hidden="true"></i> by <a href="https://anand-3399.github.io/Portfolio/" target="_blank">Anand Arvind
+                    Jaiswar</a>
+
+                </P>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="footer_icon social_icon">
+                <ul class="list-unstyled">
+                  <li><a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li><a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a></li>
+                  <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--::footer_part end::-->
+  </div>
+  <!-- jquery plugins here-->
+  <script src="js/jquery-1.12.1.min.js"></script>
+  <!-- popper js -->
+  <script src="js/popper.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- easing js -->
+  <script src="js/jquery.magnific-popup.js"></script>
+  <!-- swiper js -->
+  <script src="js/swiper.min.js"></script>
+  <!-- swiper js -->
+  <script src="js/masonry.pkgd.js"></script>
+  <!-- particles js -->
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.nice-select.min.js"></script>
+  <!-- slick js -->
+  <script src="js/slick.min.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/waypoints.min.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/jquery.form.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/mail-script.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
 </body>
 
 </html>

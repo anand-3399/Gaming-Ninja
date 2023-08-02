@@ -1,0 +1,2 @@
+Enter the client ID and all the necessary stuff on the JSON file via the Google developer console.
+Also, enter the Redirect URI in the config.php file

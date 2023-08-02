@@ -1,0 +1,1 @@
+The SQL Schema should be uploaded to the MySQL server via the import feature of MySQL Workbench. The SQL Schema is available in the file named "registration.sql" and "users.sql" in this directory of the project.
