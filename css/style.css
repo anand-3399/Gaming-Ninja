@@ -236,7 +236,9 @@ h6 {
 }
 
 
-p {
+p,
+tr,
+td {
   font-family: "Poppins", sans-serif;
   line-height: 29px;
   font-size: 15px;
@@ -6844,6 +6846,16 @@ h6 {
 }
 
 /* For 000webhostapp */
-img[alt="www.000webhost.com"]{
+img[alt="www.000webhost.com"] {
   display: none;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+td img {
+  width: 50%;
+  border-radius: 50%;
 }

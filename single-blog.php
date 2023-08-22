@@ -32,67 +32,80 @@ session_start();
 <body>
    <!--::header part start::-->
    <header class="main_menu single_page_menu">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="index.php"> <img src="img\Gaming Ninja Logo.png" alt="logo">
-                            </a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="menu_icon"><i class="fas fa-bars"></i></span>
-                            </button>
+      <div class="container">
+         <div class="row align-items-center">
+            <div class="col-lg-12">
+               <nav class="navbar navbar-expand-lg navbar-light">
+                  <a class="navbar-brand" href="index.php"> <img src="img\Gaming Ninja Logo.png" alt="logo">
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="menu_icon"><i class="fas fa-bars"></i></span>
+                  </button>
 
-                            <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="index.php">Home</a>
-                                    </li>
-                                    <!-- check wheter its previously login or not -->
+                  <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
+                     <ul class="navbar-nav">
+                        <li class="nav-item">
+                           <a class="nav-link" href="index.php">Home</a>
+                        </li>
+                        <!-- check wheter its previously login or not -->
 
-                                    <?php
-                                    if (!isset($_SESSION['username'])) {
-                                    ?>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="login.php">Login</a>
-                                        </li>
-                                    <?php
-                                    } else {
-                                    ?>
-                                        <li class="nav-item">
-                                            <a id="LOGIN_ID_MAIN" onclick="CheckStatus()" class="nav-link" href="logout.php">Logout</a>
-                                        </li>
-                                    <?php
-                                    }
-                                    ?>
+                        <?php
+                        if (!isset($_SESSION['username'])) {
+                        ?>
+                           <li class="nav-item">
+                              <a class="nav-link" href="login.php">Login</a>
+                           </li>
+                        <?php
+                        } else {
+                        ?>
+                           <li class="nav-item">
+                              <a id="LOGIN_ID_MAIN" onclick="CheckStatus()" class="nav-link" href="logout.php">Logout</a>
+                           </li>
+                        <?php
+                        }
+                        ?>
+
+                        <li class="nav-item">
+                           <?php
+                           if (isset($_SESSION['id']) && ($_SESSION['id'] === "1")) {
+                           ?>
+
+                              <a class="nav-link" href="superuser.php">Admin</a>
+
+                           <?php
+                           }
+
+                           ?>
+                        </li>
 
 
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="team.php">team</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Blog
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="blog.php"> blog</a>
-                                            <a class="dropdown-item" href="single-blog.php">Latest blog</a>
-                                        </div>
-                                    </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="team.php">team</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Blog
+                           </a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="blog.php"> blog</a>
+                              <a class="dropdown-item" href="single-blog.php">Latest blog</a>
+                           </div>
+                        </li>
 
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="contact.php">Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="#" class="btn_1 d-none d-sm-block">Install Now</a>
-                        </nav>
-                    </div>
-                </div>
+                        <li class="nav-item">
+                           <a class="nav-link" href="contact.php">Contact</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <a href="#" class="btn_1 d-none d-sm-block">Install Now</a>
+               </nav>
             </div>
-        </header>
-   
-   
-    <!-- Header part end-->
+         </div>
+      </div>
+   </header>
+
+
+   <!-- Header part end-->
 
    <!-- breadcrumb start-->
    <section class="breadcrumb breadcrumb_bg">
@@ -175,8 +188,7 @@ session_start();
                   </div>
                   <div class="navigation-area">
                      <div class="row">
-                        <div
-                           class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+                        <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                            <div class="thumb">
                               <a href="#">
                                  <img class="img-fluid" src="img/post/preview.png" alt="">
@@ -194,8 +206,7 @@ session_start();
                               </a>
                            </div>
                         </div>
-                        <div
-                           class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+                        <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                            <div class="detials">
                               <p>Next Post</p>
                               <a href="#">
@@ -315,8 +326,7 @@ session_start();
                      <div class="row">
                         <div class="col-12">
                            <div class="form-group">
-                              <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                 placeholder="Write Comment"></textarea>
+                              <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9" placeholder="Write Comment"></textarea>
                            </div>
                         </div>
                         <div class="col-sm-6">
@@ -336,8 +346,7 @@ session_start();
                         </div>
                      </div>
                      <div class="form-group mt-3">
-                        <button type="submit" class="button button-contactForm btn_1">Send Message <i
-                              class="flaticon-right-arrow"></i> </button>
+                        <button type="submit" class="button button-contactForm btn_1">Send Message <i class="flaticon-right-arrow"></i> </button>
                      </div>
                   </form>
                </div>
@@ -348,8 +357,7 @@ session_start();
                      <form action="#">
                         <div class="form-group">
                            <div class="input-group mb-3">
-                              <input type="text" class="form-control" placeholder='Search Keyword'
-                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                              <input type="text" class="form-control" placeholder='Search Keyword' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
                               <div class="input-group-append">
                                  <button class="btn" type="button"><i class="ti-search"></i></button>
                               </div>
@@ -506,11 +514,9 @@ session_start();
                      <h4 class="widget_title">Newsletter</h4>
                      <form action="#">
                         <div class="form-group">
-                           <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                              onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                           <input type="email" class="form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
                         </div>
-                        <button class="button rounded-0 primary-bg text-white w-100 btn_1"
-                           type="submit">Subscribe</button>
+                        <button class="button rounded-0 primary-bg text-white w-100 btn_1" type="submit">Subscribe</button>
                      </form>
                   </aside>
                </div>
@@ -523,91 +529,84 @@ session_start();
    <!--::footer_part start::-->
    <footer class="footer_part">
       <div class="footer_top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-sm-6 col-lg-3">
-                      <div class="single_footer_part">
-                          <a href="index.php" class="footer_logo_iner"> <img src="img/Gaming Ninja Logo.png"
-                                  alt="#"> </a>
-                          <p>Connect with US
-                          </p>
-                      </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-6 col-lg-3">
+                  <div class="single_footer_part">
+                     <a href="index.php" class="footer_logo_iner"> <img src="img/Gaming Ninja Logo.png" alt="#"> </a>
+                     <p>Connect with US
+                     </p>
                   </div>
-                  <div class="col-sm-6 col-lg-3">
-                      <div class="single_footer_part">
-                          <h4>Contact Info</h4>
-                          <p>Address : Mumbai, India</p>
-                          <p>Phone : +91 9699685491</p>
-                          <p>Email : anandjaiswar02@gmail.com</p>
-                      </div>
+               </div>
+               <div class="col-sm-6 col-lg-3">
+                  <div class="single_footer_part">
+                     <h4>Contact Info</h4>
+                     <p>Address : Mumbai, India</p>
+                     <p>Phone : +91 9699685491</p>
+                     <p>Email : anandjaiswar02@gmail.com</p>
                   </div>
-                  <div class="col-sm-6 col-lg-3">
-                      <div class="single_footer_part">
-                          <h4>Important Link</h4>
-                          <ul class="list-unstyled">
-                              <li><a href="">WHMCS-bridge</a></li>
-                              <li><a href="">Search Domain</a></li>
-                              <li><a href="">My Account</a></li>
-                              <li><a href="">Shopping Cart</a></li>
-                              <li><a href="">Our Shop</a></li>
-                          </ul>
-                      </div>
+               </div>
+               <div class="col-sm-6 col-lg-3">
+                  <div class="single_footer_part">
+                     <h4>Important Link</h4>
+                     <ul class="list-unstyled">
+                        <li><a href="">WHMCS-bridge</a></li>
+                        <li><a href="">Search Domain</a></li>
+                        <li><a href="">My Account</a></li>
+                        <li><a href="">Shopping Cart</a></li>
+                        <li><a href="">Our Shop</a></li>
+                     </ul>
                   </div>
-                  <div class="col-sm-6 col-lg-3">
-                      <div class="single_footer_part">
-                          <h4>Newsletter</h4>
-                          <p>Know about the latest Game updates now.
-                          </p>
-                          <div id="mc_embed_signup">
-                              <form target="_blank"
-                                  action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                  method="get" class="subscribe_form relative mail_part">
-                                  <input type="email" name="email" id="newsletter-form-email"
-                                      placeholder="Email Address" class="placeholder hide-on-focus"
-                                      onfocus="this.placeholder = ''"
-                                      onblur="this.placeholder = ' Email Address '">
-                                  <button type="submit" name="submit" id="newsletter-submit"
-                                      class="email_icon newsletter-submit button-contactForm"><i
-                                          class="far fa-paper-plane"></i></button>
-                                  <div class="mt-10 info"></div>
-                              </form>
-                          </div>
-                      </div>
+               </div>
+               <div class="col-sm-6 col-lg-3">
+                  <div class="single_footer_part">
+                     <h4>Newsletter</h4>
+                     <p>Know about the latest Game updates now.
+                     </p>
+                     <div id="mc_embed_signup">
+                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part">
+                           <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
+                           <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm"><i class="far fa-paper-plane"></i></button>
+                           <div class="mt-10 info"></div>
+                        </form>
+                     </div>
                   </div>
-              </div>
-          </div>
+               </div>
+            </div>
+         </div>
       </div>
       <div class="copygight_text">
-          <div class="container">
-              <div class="row align-items-center">
-                  <div class="col-lg-8">
-                      <div class="copyright_text">
-                          <P>
-                              Copyright &copy;
-                              <script>document.write(new Date().getFullYear());</script> All rights reserved by
-                              Gaming Ninja| Made with
-                              <i class="ti-heart" aria-hidden="true"></i> by <a
-                                  href="https://anand-3399.github.io/Portfolio/" target="_blank">Anand Arvind
-                                  Jaiswar</a>
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-lg-8">
+                  <div class="copyright_text">
+                     <P>
+                        Copyright &copy;
+                        <script>
+                           document.write(new Date().getFullYear());
+                        </script> All rights reserved by
+                        Gaming Ninja| Made with
+                        <i class="ti-heart" aria-hidden="true"></i> by <a href="https://anand-3399.github.io/Portfolio/" target="_blank">Anand Arvind
+                           Jaiswar</a>
 
-                          </P>
-                      </div>
+                     </P>
                   </div>
-                  <div class="col-lg-4">
-                      <div class="footer_icon social_icon">
-                          <ul class="list-unstyled">
-                              <li><a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a>
-                              </li>
-                              <li><a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a></li>
-                              <li><a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a></li>
-                              <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
-                          </ul>
-                      </div>
+               </div>
+               <div class="col-lg-4">
+                  <div class="footer_icon social_icon">
+                     <ul class="list-unstyled">
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
+                     </ul>
                   </div>
-              </div>
-          </div>
+               </div>
+            </div>
+         </div>
       </div>
-  </footer>
+   </footer>
    <!--::footer_part end::-->
    <!-- jquery plugins here-->
    <script src="js/jquery-1.12.1.min.js"></script>

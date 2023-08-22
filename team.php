@@ -66,6 +66,19 @@ session_start();
                                     }
                                     ?>
 
+                                    <li class="nav-item">
+                                        <?php
+                                        if (isset($_SESSION['id']) && ($_SESSION['id'] === "1")) {
+                                        ?>
+
+                                            <a class="nav-link" href="superuser.php">Admin</a>
+
+                                        <?php
+                                        }
+
+                                        ?>
+                                    </li>
+
 
                                     <li class="nav-item">
                                         <a class="nav-link" href="team.php">team</a>
@@ -263,8 +276,7 @@ session_start();
                             <div class="live_stareams_slide_img">
                                 <img src="img/live_streams_1.png" alt="">
                                 <div class="extends_video">
-                                    <a id="play-video_1" class="video-play-button popup-youtube"
-                                        href="https://www.youtube.com/watch?v=pBFQdxA-apI">
+                                    <a id="play-video_1" class="video-play-button popup-youtube" href="https://www.youtube.com/watch?v=pBFQdxA-apI">
                                         <span class="fas fa-play"></span>
                                     </a>
                                 </div>
@@ -272,8 +284,7 @@ session_start();
                             <div class="live_stareams_slide_img">
                                 <img src="img/live_streams_2.png" alt="">
                                 <div class="extends_video">
-                                    <a id="play-video_1" class="video-play-button popup-youtube"
-                                        href="https://www.youtube.com/watch?v=pBFQdxA-apI">
+                                    <a id="play-video_1" class="video-play-button popup-youtube" href="https://www.youtube.com/watch?v=pBFQdxA-apI">
                                         <span class="fas fa-play"></span>
                                     </a>
                                 </div>
@@ -281,8 +292,7 @@ session_start();
                             <div class="live_stareams_slide_img">
                                 <img src="img/live_streams_1.png" alt="">
                                 <div class="extends_video">
-                                    <a id="play-video_1" class="video-play-button popup-youtube"
-                                        href="https://www.youtube.com/watch?v=pBFQdxA-apI">
+                                    <a id="play-video_1" class="video-play-button popup-youtube" href="https://www.youtube.com/watch?v=pBFQdxA-apI">
                                         <span class="fas fa-play"></span>
                                     </a>
                                 </div>
@@ -290,8 +300,7 @@ session_start();
                             <div class="live_stareams_slide_img">
                                 <img src="img/live_streams_2.png" alt="">
                                 <div class="extends_video">
-                                    <a id="play-video_1" class="video-play-button popup-youtube"
-                                        href="https://www.youtube.com/watch?v=pBFQdxA-apI">
+                                    <a id="play-video_1" class="video-play-button popup-youtube" href="https://www.youtube.com/watch?v=pBFQdxA-apI">
                                         <span class="fas fa-play"></span>
                                     </a>
                                 </div>
@@ -299,8 +308,7 @@ session_start();
                             <div class="live_stareams_slide_img">
                                 <img src="img/live_streams_1.png" alt="">
                                 <div class="extends_video">
-                                    <a id="play-video_1" class="video-play-button popup-youtube"
-                                        href="https://www.youtube.com/watch?v=pBFQdxA-apI">
+                                    <a id="play-video_1" class="video-play-button popup-youtube" href="https://www.youtube.com/watch?v=pBFQdxA-apI">
                                         <span class="fas fa-play"></span>
                                     </a>
                                 </div>
@@ -308,8 +316,7 @@ session_start();
                             <div class="live_stareams_slide_img">
                                 <img src="img/live_streams_2.png" alt="">
                                 <div class="extends_video">
-                                    <a id="play-video_1" class="video-play-button popup-youtube"
-                                        href="https://www.youtube.com/watch?v=pBFQdxA-apI">
+                                    <a id="play-video_1" class="video-play-button popup-youtube" href="https://www.youtube.com/watch?v=pBFQdxA-apI">
                                         <span class="fas fa-play"></span>
                                     </a>
                                 </div>
@@ -317,8 +324,7 @@ session_start();
                             <div class="live_stareams_slide_img">
                                 <img src="img/live_streams_1.png" alt="">
                                 <div class="extends_video">
-                                    <a id="play-video_1" class="video-play-button popup-youtube"
-                                        href="https://www.youtube.com/watch?v=pBFQdxA-apI">
+                                    <a id="play-video_1" class="video-play-button popup-youtube" href="https://www.youtube.com/watch?v=pBFQdxA-apI">
                                         <span class="fas fa-play"></span>
                                     </a>
                                 </div>
@@ -326,8 +332,7 @@ session_start();
                             <div class="live_stareams_slide_img">
                                 <img src="img/live_streams_2.png" alt="">
                                 <div class="extends_video">
-                                    <a id="play-video_1" class="video-play-button popup-youtube"
-                                        href="https://www.youtube.com/watch?v=pBFQdxA-apI">
+                                    <a id="play-video_1" class="video-play-button popup-youtube" href="https://www.youtube.com/watch?v=pBFQdxA-apI">
                                         <span class="fas fa-play"></span>
                                     </a>
                                 </div>
@@ -346,8 +351,7 @@ session_start();
                     <div class="row">
                         <div class="col-sm-6 col-lg-3">
                             <div class="single_footer_part">
-                                <a href="index.php" class="footer_logo_iner"> <img src="img/Gaming Ninja Logo.png"
-                                        alt="#"> </a>
+                                <a href="index.php" class="footer_logo_iner"> <img src="img/Gaming Ninja Logo.png" alt="#"> </a>
                                 <p>Connect with US
                                 </p>
                             </div>
@@ -378,16 +382,9 @@ session_start();
                                 <p>Know about the latest Game updates now.
                                 </p>
                                 <div id="mc_embed_signup">
-                                    <form target="_blank"
-                                        action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                        method="get" class="subscribe_form relative mail_part">
-                                        <input type="email" name="email" id="newsletter-form-email"
-                                            placeholder="Email Address" class="placeholder hide-on-focus"
-                                            onfocus="this.placeholder = ''"
-                                            onblur="this.placeholder = ' Email Address '">
-                                        <button type="submit" name="submit" id="newsletter-submit"
-                                            class="email_icon newsletter-submit button-contactForm"><i
-                                                class="far fa-paper-plane"></i></button>
+                                    <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part">
+                                        <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
+                                        <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm"><i class="far fa-paper-plane"></i></button>
                                         <div class="mt-10 info"></div>
                                     </form>
                                 </div>
@@ -403,10 +400,11 @@ session_start();
                             <div class="copyright_text">
                                 <P>
                                     Copyright &copy;
-                                    <script>document.write(new Date().getFullYear());</script> All rights reserved by
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script> All rights reserved by
                                     Gaming Ninja| Made with
-                                    <i class="ti-heart" aria-hidden="true"></i> by <a
-                                        href="https://anand-3399.github.io/Portfolio/" target="_blank">Anand Arvind
+                                    <i class="ti-heart" aria-hidden="true"></i> by <a href="https://anand-3399.github.io/Portfolio/" target="_blank">Anand Arvind
                                         Jaiswar</a>
 
                                 </P>

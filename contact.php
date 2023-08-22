@@ -68,6 +68,19 @@ session_start();
                   }
                   ?>
 
+                  <li class="nav-item">
+                    <?php
+                    if (isset($_SESSION['id']) && ($_SESSION['id'] === "1")) {
+                    ?>
+
+                      <a class="nav-link" href="superuser.php">Admin</a>
+
+                    <?php
+                    }
+
+                    ?>
+                  </li>
+
 
                   <li class="nav-item">
                     <a class="nav-link" href="team.php">team</a>
